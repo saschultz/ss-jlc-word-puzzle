@@ -2,12 +2,14 @@ $(document).ready(function() {
   $("#formOne").submit(function(event) {
       var userWords = $("#userSentence").val().split(" ");
       var arrayWords = userWords;
-      arrayWords.map(function(arrayWord) {
 
+      var arr = $.map(arrayWords, function(arrayWord) {
       if (arrayWord.length >= 3) {
-      console.log(arrayWord);
+        return arrayWord;
+        // $("#output").text(arrayWord);
       }
+    });
+    console.log(arr);
   event.preventDefault();
-  });
   });
 });
